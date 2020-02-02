@@ -1,0 +1,7 @@
+B1,B2: Basic Python
+B3,B4: Control Pi, set up environment(Python and OpenCV on Raspbian)
+B5,B6: Basic OpenCV
+B7: Access Camera
+B8,B9: Time lapse capture Application
+B10,B11: Bird Feeder monitor Application
+B12: Exam
