@@ -1,7 +1,29 @@
-B1,B2: Basic Python
-B3,B4: Control Pi, set up environment(Python and OpenCV on Raspbian)
+B1: Tong quan cac noi dung trong khoa hoc, board Pi va Computer vision
+B2,B3: Python co ban
+-Cai dat Python
+-Variable va operator
+-Cac kieu du lieu co ban trong Python
+-Tuong tac voi user input/output
+-Dieu kien re nhanh
+-Ham va module
+-Thao tac voi file
+B4: Setup moi truong phat trien python va OpenCV tren Pi
+-Flash image, boot up va dieu khien Pi tu host PC
+-Setup OpenCV tren Pi
 B5,B6: Basic OpenCV
-B7: Access Camera
-B8,B9: Time lapse capture Application
-B10,B11: Bird Feeder monitor Application
-B12: Exam
+-Load anh voi OpenCV
+-Thao tac voi diem anh
+-Thao tac cat mang va crop anh
+-Thay doi size anh
+-Xoay anh
+-Lam mo anh
+-Dem vat the
+-Tru anh
+-Nhan dang vat the va khuon mat
+B7: Truy cao vao camera va chinh sua cac thong so cua camera
+B8,B9: Ung dung time lapse
+B10,B11: Und dung phat hien vat the chuyen dong
+
+Phan cung thuc hanh:
+-Board RPI 3
+-Pi Cam/USB Cam
