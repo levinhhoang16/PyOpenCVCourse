@@ -22,7 +22,7 @@ B5,B6: Basic OpenCV
 -Nhan dang vat the va khuon mat
 B7: Truy cao vao camera va chinh sua cac thong so cua camera
 B8,B9: Ung dung time lapse
-B10,B11: Und dung phat hien vat the chuyen dong
+B10,B11: Ung dung phat hien vat the chuyen dong
 
 Phan cung thuc hanh:
 -Board RPI 3
