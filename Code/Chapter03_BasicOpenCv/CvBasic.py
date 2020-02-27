@@ -1,11 +1,9 @@
-#Run script: python3 CvBasic.py
 #Basic OpenCV
-#Run script: python3 CvBasic.py
+#Chay chuong trinh: python3 CvBasic.py
 
-#Load imgae from disk to ram, image is multi dimession numPy arr
-#print (width, height, depth) of images
-#Show images on screen
-
+#Load anh tu disk len ram, anh la 1 mang numPy nhieu chieu
+#Print gia tri (width, height ,depth) cua anh
+#Hien thi anh len man hinh
 import cv2
 import imutils
 import os
@@ -16,27 +14,28 @@ image = cv2.imread(imgPath)
 print("width={}, height={}, depth={}".format(width,height,depth))
 cv2.imshow("BasicImage",image)
 cv2.waitKey(0)
-"""
-#Access pixel value (B,G,R) locate at [100,100]
-(B,G,R) = image[100,100]
+
+#Truy xuat gia tri diem anh (B,G,R) o vi tri [100,100]
+[B,G,R] = image[100,100]
 print("B={}, G={}, R={}".format(B,G,R))
 cv2.waitKey(0)
 
-#ROI, show image region of interest
-#Must be have basic numpy and array
+#Tham khao them ve numpy va array de hieu code
 #https://datascienceplus.com/vectors-and-arrays-in-python/
+
+#ROI(Region of Interest): Vung quan tam cua anh
 roi = image[196:685,608:821] # [start_y: end_y, start_x: end_x]
+                             #slice list tu hang 196 toi 684, cot 608 toi 821
 cv2.imshow("ROI", roi)
 cv2.waitKey(0)
 
-#Resize image for diferrent purpose such as:
-#fixed screen size, faster processing with fewer pixel
-
+#Resize anh bo qua ti le chieu rong chieu cao
 rszImg = cv2.resize(image,(300,300))#ignore aspect ratio
 cv2.imshow("Resized Imgae",rszImg)
 cv2.waitKey(0)
 
-#use imutils
+#Resize anh giu ti le chieu rong chieu cao
+#Dung imutils
 rszKeepAptImg =imutils.resize(image,width=300)#keep aspect ratio
 cv2.imshow("Resize Imgae Keep Aspect ration",rszKeepAptImg)
 cv2.waitKey(0)
@@ -51,7 +50,7 @@ cv2.waitKey(0)
 blurredImg = cv2.GaussianBlur(image, (11,11), 0)
 cv2.imshow("Blurred Image", blurredImg)
 cv2.waitKey(0)
-"""
+
 #Drawing on a Image
 
 #red rectangle around boy, thick=3
