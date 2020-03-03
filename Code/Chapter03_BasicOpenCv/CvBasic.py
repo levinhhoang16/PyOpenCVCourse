@@ -40,12 +40,12 @@ rszKeepAptImg =imutils.resize(image,width=300)#keep aspect ratio
 cv2.imshow("Resize Imgae Keep Aspect ration",rszKeepAptImg)
 cv2.waitKey(0)
 
-#Rotate image
+#Xoay anh
 rotateImg = imutils.rotate(image,45)#+/- <-/->
 cv2.imshow("Rotate 45 image",rotateImg)
 cv2.waitKey(0)
 
-#Blurred image
+#Lam mo anh
 #https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_filtering/py_filtering.html?highlight=gaussianblur
 blurredImg = cv2.GaussianBlur(image, (11,11), 0)
 cv2.imshow("Blurred Image", blurredImg)
@@ -53,13 +53,16 @@ cv2.waitKey(0)
 
 #Drawing on a Image
 
-#red rectangle around boy, thick=3
+#Ve hinh chu nhat xung quanh thang cu, do day net ve = 3
 cv2.rectangle(image, (608,196), (821,685), (0,255,0), 3)
-# green circle with center(700,500), r=40
+
+#Ve hinh tron tam(700,500), r=40
 cv2.circle(image, (700,500), 40, (0,0,255), -1)
-# blue line cross the rect 
+
+#Ve duong cheo hinh chu nhat tren 
 cv2.line(image, (608,196), (821,685), (255,0,0), 3)
-#text start at axis(100,100), font=0.9 thick=3
+
+#ghi chu bat dau o vi tri(100,100), font=0.9 do day=3
 cv2.putText(image,"Open CV Drawing", (100,100),cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255,0,0),3)
 cv2.imshow("Drawing on Img", image)
 cv2.waitKey(0)
