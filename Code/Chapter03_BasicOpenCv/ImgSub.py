@@ -4,7 +4,8 @@ import imutils
 import cv2
 from matplotlib import pyplot as plt
 
-# create arg parser and parse the arg
+# Tao doi tuong argP dung de xay dung list argument can truyen vao cho chuong trinh
+# Sau do parse argment ra 1 dictinary de su dung trong chuong trinh
 argP = argparse.ArgumentParser()
 argP.add_argument("-b", "--bgImg", required=True, 
     help="path to back ground input image")
