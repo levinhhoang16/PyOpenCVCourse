@@ -13,23 +13,26 @@ argP.add_argument("-f", "--fgImg", required=True,
     help="path to fore ground input image")    
 args = vars(argP.parse_args())
 
-# load image
+# Tai anh len
 bgImg = cv2.imread(args["bgImg"])
 fgImg = cv2.imread(args["fgImg"])
 
-# convert to gray
+# Chuyen sang gray scale, moi diem anh 0-255
 bgGrayImg = cv2.cvtColor(bgImg, cv2.COLOR_BGR2GRAY)
 fgGrayImg = cv2.cvtColor(fgImg, cv2.COLOR_BGR2GRAY)
 
-#subtraction
+#Tru nen
+# 2 thang(0,255) tru nhau thi range la (-255,255) dua ve range (0,255) 
+# bang cach lay tri tuyet doi
 subImg = bgGrayImg.astype("int32") - fgGrayImg.astype("int32")
 subImg = np.absolute(subImg).astype("uint8")
 
-# using threshold img to find the region in subtract img with
-# large pixel differences
+# theo nguyen tac nhung diem anh gia tri pixel cang khac nhau thi tru ra
+# ket qua cang lon, ta dung threshold xac dinh nhung vung nay de tao ra
+# binary image 
 threshold = cv2.threshold(subImg, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
-# remove noise 
+# Loai bo nhieu
 threshold = cv2.erode(threshold, None, iterations=1)
 threshold = cv2.dilate(threshold, None, iterations=1)
 
@@ -43,19 +46,24 @@ plt.show()
 cv2.waitKey(0)
 """
 
-# find contours in the threshold subtration img and draw the bounding box around the 
-# fore ground area
+# sau khi co duoc binary image voi cac diem anh danh dau, 
+# thuc hien giai thuat contours de
+# noi cac diem anh nay lai tao thanh duong bao qua cac vung danh dau.
+# Contours se tra ve tap hop cac diem(x,y) tren duong bao
+# duoc su dung cho qua trinh tinh toan tiep theo
 contours = cv2.findContours(threshold.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 contours = imutils.grab_contours(contours)
+
+# gia tri nguong duong vo cung, am vo cung
 (minX, minY) = (np.inf, np.inf)
 (maxX, maxY) = (-np.inf, -np.inf)
 
-# loop over the contours and update min max X,Y value
+# loop tat ca item trong contours set de update min max xy
 for c in contours:
-    # draw the bounding box around this item
+    # xac dinh hinh chu nhat bao quanh moi item
     (x,y,w,h) = cv2.boundingRect(c)
 
-    # w,h <= 20 =>noise=>ignore
+    # w,h <= 20 =>noise=>boqua
     if w > 20 and h > 20:
         #update min,max XY value
         minX = min(minX,x)
@@ -63,7 +71,7 @@ for c in contours:
         maxX = max(maxX, x+w-1)
         maxY = max(maxY, y+h-1)
     
-#draw the bounding rectangle
+#ve hinh chu nhat bao quanh khu vuc khac biet giua 2 anh
 cv2.rectangle(fgImg, (minX, minY), (maxX, maxY), (255,0,0), 3)
 
 #show img
