@@ -1,17 +1,18 @@
-# Run script: python3 AccessCam.py
+# Chay chuong trinh: python3 AccessCam.py
 
 import cv2
 from imutils.video import VideoStream
 import imutils
 import time
 
-# Init video stream 
+# Khoi tao VideoStream object 
 viStream = VideoStream(src=0).start()
-time.sleep(2.0)
+# Cho camera init xong
+time.sleep(2.0) 
 
-# Loop and show frames
+# Loop va show tat ca frame doc duoc
 while True:
-    #get frame and resize
+    #doc frame va resize
     frame = viStream.read()
     frame = imutils.resize(frame, width=480)
 
@@ -19,7 +20,7 @@ while True:
     cv2.imshow("Frame",frame)
     key = cv2.waitKey(1) & 0xFF
     
-    # got "q" key => break
+    # nhan ki tu "q" => break
     if key == ord("q"):
         break
     

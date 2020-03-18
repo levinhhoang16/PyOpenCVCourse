@@ -1,3 +1,9 @@
+"""
+Chay chuong trinh python3 ImgSub.py -b Images/BackGround.jpeg 
+-f Images/ForeGround.jpeg
+Chuong trinh nhan 2 tham so truyen vao la back ground va fore ground
+image, xac dinh va ve hinh chu nhat bao quanh khu vuc khac biet giua 2 hinh
+"""
 import numpy as np
 import argparse
 import imutils 
