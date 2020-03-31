@@ -6,7 +6,7 @@ import imutils
 import time
 
 # Khoi tao VideoStream object 
-viStream = VideoStream(src=0).start()
+viStream = VideoStream(usePiCamera=True, resolution=(640, 480)).start()
 # Cho camera init xong
 time.sleep(2.0) 
 
@@ -14,7 +14,6 @@ time.sleep(2.0)
 while True:
     #doc frame va resize
     frame = viStream.read()
-    frame = imutils.resize(frame, width=480)
 
     #show frame
     cv2.imshow("Frame",frame)
