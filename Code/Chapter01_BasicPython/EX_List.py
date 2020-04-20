@@ -26,17 +26,17 @@ Gặp command print thì xuất list ra
 Sample Input 0
 
 12
-insert 0 5
-insert 1 10
-insert 0 6
+insert 0 5  ==>[5]
+insert 1 10 ==>[5,10]
+insert 0 6  ==>[6,5,10]
 print
-remove 6
-append 9
-append 1
-sort
+remove 6    ==>[5,10]
+append 9    ==>[5,10,9]
+append 1    ==>[5,10,9,1]
+sort        ==>[1, 5, 9, 10]
 print
-pop
-reverse
+pop         ==>[1, 5, 9]  
+reverse     ==>[9, 5, 1]
 print
 
 Sample Output 0
