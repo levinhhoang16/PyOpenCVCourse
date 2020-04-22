@@ -23,7 +23,13 @@
 # print("Acess global var in main {}".format(globarVar))
 # print("Acess local var in main {}".format(localVar))
 
-from testModule import *
+# from testModule import *
 
-print(addFunc(1,2))
-print(subFunc(1,2))
+# print(addFunc(1,2))
+# print(subFunc(1,2))
+
+if __name__=="__main__":
+    N = int(input())
+    bangDiem = {}
+    for i in range(N):
+        diem = input().split()

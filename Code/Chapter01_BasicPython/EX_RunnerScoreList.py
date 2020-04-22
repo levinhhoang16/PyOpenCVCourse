@@ -12,3 +12,16 @@ Output:
 if __name__ == '__main__':
     n = int(input())
     arr = map(int, input().split())
+    runnerList = list(arr)
+    print(runnerList)
+    winScore = runnerList[0]
+    runnerScore = runnerList[0]
+    for x in runnerList:
+        if x >= winScore:
+            winScore = x
+    
+    for x in runnerList:
+        if x >= runnerScore  and x != winScore:
+            runnerScore = x
+    print(winScore)
+    print(runnerScore) 

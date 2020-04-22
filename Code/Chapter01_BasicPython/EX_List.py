@@ -1,10 +1,10 @@
 """
 Cho 1 list (list = []). Thực hiện 1 số công việc sau
 
-1. insert i e: Insert integer  at position .
+1. insert i e: Insert integer  at position e .
 2. print: Print the list.
 3. remove e: Delete the first occurrence of integer .
-4. append e: Insert integer  at the end of the list.
+4. append e: Insert integer  at the end of the list. 
 5. sort: Sort the list.
 6. pop: Pop the last element from the list.
 7. reverse: Reverse the list.
@@ -45,3 +45,13 @@ Sample Output 0
 [1, 5, 9, 10]
 [9, 5, 1]
 """
+
+if __name__=="__main__":
+    N = int(input())
+    resultList = []
+    for i in range(N):
+        cmdList = input().split()
+        if cmdList[0] == "insert":
+            resultList.insert(int(cmdList[1]), int(cmdList[2]))
+        elif cmdList[0] == "print":
+            print(resultList)
