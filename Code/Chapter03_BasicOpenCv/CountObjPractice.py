@@ -44,15 +44,22 @@ edges = cv2.Canny(blurImage,50,130)
 
 # su dung contours de noi cac diem anh nay lai tao thanh duong bao vat the
 # co duoc tap diem (x,y) tren duong bao cac khoi hinh
-cntrsPoint =cv2.findContours(edges.copy(),cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+cntrsPoint =cv2.findContours(edges.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+cntrsPoint = cntrsPoint[0]
+# print(type(cntrsPoint))
 
-print(type(cntrsPoint))
+numShape = 0
 
-# for c in cntrsPoint:
+for c in cntrsPoint:
+    #vung bao co dien tich nho qua, minh xem la nhieu bo qua
+    if cv2.contourArea(c) < 50:
+        continue
 
-#     # ve duong bao quanh cac tap diem (x,y)
-#     cv2.drawContours(image,[c],-1, (205,0,255),3)
+    # ve duong bao quanh cac tap diem (x,y)
+    cv2.drawContours(image,[c],-1, (205,0,255),3)
+    numShape +=1
 # cv2.drawContours(image, cntrsPoint, -1, (0,255,0), 3)
 
+print("Found {} shapes ".format(numShape))
 cv2.imshow("Contours Image",image)
 cv2.waitKey(0)
