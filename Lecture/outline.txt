@@ -10,6 +10,9 @@ B2,B3: Python co ban
 B4: Setup moi truong phat trien python va OpenCV tren Pi
 -Flash image, boot up va dieu khien Pi tu host PC
 -Setup OpenCV tren Pi
+https://www.notion.so/H-ng-d-n-flash-image-Linux-k-t-n-i-v-i-u-khi-n-board-Pi-tr-n-host-Win-10-85732bcdbf2c41dfb5e9d840672e581d
+https://www.notion.so/C-i-t-OpenCV-tr-n-Raspberry-Pi-3-358a9897d1794b31b21f419e2b1a6540
+
 B5,B6: Basic OpenCV
 -Load anh voi OpenCV
 -Thao tac voi diem anh
