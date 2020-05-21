@@ -1,4 +1,4 @@
-# Run script: python3 PiCamAdjust.py
+# Chay chuong trinh: python3 PiCamAdjust.py
 
 from imutils.video import VideoStream
 from itertools import cycle
@@ -12,19 +12,18 @@ def getPicamSettings(output=False):
     global g_picamSettings
     global g_viStream
 
-    #local var to hold current setting
+    #local var de giu setting hien tai
     curPicamSettings = {}
 
-    #print status message if output enable
+    #print status message neu enable output
     if output:
         print("[INFO] Read Pi cam settings...")
     
-    #Get picam attributes from g_viStream object
-
+    #Get thuoc tinh cua tung key trong g_viStream object
     for attr in g_picamSettings.keys():
         curPicamSettings[attr] = getattr(g_viStream.camera, attr)
     
-    # print setting if output enable
+    # print setting neu enable output
     if output:
         pprint(curPicamSettings)
 
@@ -36,7 +35,7 @@ def getSinglePicamSettings(setting):
     curPicamSettings = getPicamSettings()
     return curPicamSettings[setting]
 
-#function to activate new Picam settings
+#function de kich hoat new setting
 def activatePicamSettings(**args):
     global g_viStream
     g_viStream.stop()
@@ -49,16 +48,16 @@ def setPicamSettings(**args):
     global g_picamSettings
     global g_viStream
 
-    # store current setting
+    # Luu tru setting hien tai
     print("[INFO] read settings...")
     curPicamSettings = getPicamSettings()
 
-    # print and update new setting value
+    # print va update gia tri setting moi
     for (attr,value) in args.items():
         print("[INFO] Old setting {}->New setting {}".format(curPicamSettings[attr],value))
         curPicamSettings[attr] = value
 
-    # init variable to hold the duplicated attr in curPicamSettings and delete it
+    # khoi tao bien de giu cac thuoc tinh bi trung trong curPicamSettings va xoa no
     attrsToDel = []
     for attr in curPicamSettings.keys():
         if curPicamSettings[attr] == None:
@@ -74,7 +73,7 @@ def setPicamSettings(**args):
 g_viStream = VideoStream(usePiCamera=True).start()
 time.sleep(2.0)
 
-# Default setting value for auto white balance and ISO mode 
+# Gia tri mac dinh cho auto white balance ISO mode
 awbModes = ["off", "auto", "sunlight", "cloudy", "shade",
 	"tungsten", "fluorescent", "flash", "horizon"]
 isoModes = [0, 100, 200, 320, 400, 500, 640, 800, 1600]
@@ -83,10 +82,7 @@ isoModes = [0, 100, 200, 320, 400, 500, 640, 800, 1600]
 isoModesPool = cycle(isoModes)
 awbModesPool = cycle(awbModes)
 
-# the following dictionary consists of PiCamera attributes that can be
-# *changed*; the list is not exhaustive because some settings can only
-# be changed based on the values of others, so be sure to refer to
-# the docs
+#Dictionary chua nhung thuoc tinh cua camera co the thay doi
 g_picamSettings = {
 	"awb_mode": None,
 	"awb_gains": None,
