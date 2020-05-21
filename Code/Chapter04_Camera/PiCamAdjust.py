@@ -111,16 +111,16 @@ g_picamSettings = {
 }
 
 
-# Loop over frames
+# Loop va doc frame anh tu camera
 while True:
-    # get a frame
+    # doc 1 frame
     frame = g_viStream.read()
 
-    #show
+    #xuat frame ra man hinh
     cv2.imshow("Frame",frame)
     key = cv2.waitKey(1)
 
-    # Handle keypress
+    #Xu ly su kien nut nhan
     if key == ord("q"):
         break
     elif key == ord("w"): # auto white balance
