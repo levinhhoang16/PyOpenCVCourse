@@ -32,6 +32,9 @@ Các bước thực hiên:
 # Chương trình làm quen với thuật toán trừ ảnh nền cung cấp bởi opencv
 # Chạy chương trình với tham số mặc định Python3 MotionDetect1.py
 # https://docs.opencv.org/4.1.0/d1/dc5/tutorial_background_subtraction.html
+# Khu nhieu dung cac thuat toan xu ly hinh thai hoc Erosion and Dialation
+# va chay giai thuat contour de tim goc canh giup xac dinh doi tuong
+# fore ground thay doi
 
 from __future__ import print_function
 import cv2 as cv
@@ -39,7 +42,7 @@ import argparse
 parser = argparse.ArgumentParser(description='This program shows how to use background subtraction methods provided by \
                                               OpenCV. You can process both videos and images.')
 parser.add_argument('--input', type=str,
-                    help='Path to a video or a sequence of image.', default='/home/pi/birds_10min.mp4')
+                    help='Path to a video or a sequence of image.', default='/home/pi/Videos/birds_10min.mp4')
 parser.add_argument('--algo', type=str,
                     help='Background subtraction method (MOG, GMG).', default='MOG')
 args = parser.parse_args()
