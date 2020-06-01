@@ -27,7 +27,7 @@ argP.add_argument("-d", "--delay", type=float, default=3.0,
 args = vars(argP.parse_args())
 
 
-outputDir = os.path.join(args["output"], datetime.now().strftime("%Y-%m-$d-%H%M"))
+outputDir = os.path.join(args["output"], datetime.now().strftime("%Y-%m-%d-%H%M"))
 os.makedirs(outputDir)
 
 #Khoi tao videostream object
@@ -46,7 +46,7 @@ while True:
     # print(frame)
 
     #ghi timestamp cho frame vua doc o goc  duoi ben trai , mau chu do
-    timeStamp = datetime.now().strftime("%A %d %B %Y %I:%M:%S%p")
+    timeStamp = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
     cv2.putText(frame,timeStamp, (10, frame.shape[0] - 10),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,255),1)
     # print(timeStamp)
     #luu frame hien tai vao thu muc output, dinh dang {count}.jpg
