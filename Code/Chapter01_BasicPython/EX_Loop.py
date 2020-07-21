@@ -1,17 +1,17 @@
 """
 Task
-Read an integer N. For all non-negative integers i<N, print i^2. See the sample for details.
+Cho 1 so N, print ra cac gia tri i^2 voi i chay 0 den N
 
 Input Format
 
-The first and only line contains the integer,N .
+N
 
 Constraints
 1<=N<=20
 
 Output Format
 
-Print N lines, one corresponding to each i.
+Print N dong, moi dong la cac gia tri i^2
 
 Sample Input 0
 
