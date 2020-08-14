@@ -12,6 +12,11 @@ Cho 1 list (list = []). Thực hiện 1 số công việc sau
 Input format:
 Nhận vào input n là số command cần thực hiện, mỗi line tiếp theo là n command được mô tả ở trên
 
+Input Format
+
+The first line contains an integer, n, denoting the number of commands.
+Each line i of the n subsequent lines contains one of the commands described above.
+
 Constraints:
 Các thành phần dc thêm vào list phải là integer
 

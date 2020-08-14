@@ -1,0 +1,21 @@
+Check ipaddress:
+ifconifg
+
+Xem cac wifi da duoc luu:
+
+cat /etc/wpa_supplicant/wpa_supplicant.conf
+
+Chinh sua file:
+Su dung vim hoac nano
+
+vim /etc/wpa_supplicant/wpa_supplicant.conf
+hoac
+nano/etc/wpa_supplicant/wpa_supplicant.conf
+
+
+Su dung vim:
+-Mo file: vim ten_file
+-Chuyen sang che do edit: nhan i
+-Luu va thoat: Ctrl-C :wq
+-Thoat khong luu: Ctrl-C :q!
+
