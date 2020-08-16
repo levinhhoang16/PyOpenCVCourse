@@ -8,7 +8,7 @@
 
 
 # def functionScope():
-#     localVar = "This is local variable"
+#     global localVar
 #     print("Scope of function")
 #     print("Aceess globalVar {}".format(globalVar))
 #     print("Access localVar {}".format(localVar))
@@ -16,10 +16,11 @@
 #     return
 
 
+# localVar="this is global variable declare in function scope"
 # print("Main scope")
 # functionScope()
 # print("Aceess globalVar {}".format(globalVar))
-# # print("Access localVar {}".format(localVar))
+# print("Access localVar {}".format(localVar))
 
 import os 
 print(os.getcwd())
