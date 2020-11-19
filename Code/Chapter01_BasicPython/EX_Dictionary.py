@@ -8,7 +8,7 @@ Name1 DiemToan DiemLy DiemHoa
 .
 .
 NameN DiemToan DiemLy DiemHoa
-
+Name
 Định dạng output:
 Điểm trung bình
 

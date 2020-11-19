@@ -28,3 +28,7 @@ File .img .jpg .jpeg sẽ đưa vào thư mục IMAGES...
 Chương trình nhận input là đường dẫn thư mục chứa các file cần sắp xếp
 Output là thư mực được tổ chức lại
 """
+"""
+- Kiem tra file extension
+- Cach tao thu muc
+- Move file vao thu muc

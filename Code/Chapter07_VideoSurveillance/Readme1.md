@@ -1,0 +1,2 @@
+# Chương trình 1-Detect vật thể chuyển động sử dưng back ground subtractor abs_diff và accumulateWeighted
+<!-- https://www.geeksforgeeks.org/background-subtraction-in-an-image-using-concept-of-running-average/ -->
